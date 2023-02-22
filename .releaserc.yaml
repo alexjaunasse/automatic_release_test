@@ -14,7 +14,8 @@ plugins:
   - "@semantic-release/github"
 analyzeCommits:
     - path: "@semantic-release/commit-analyzer"
-      preset: angular
       releaseRules:
         - type: "*"
           release: "patch"
+        - type: "feat"
+          release: "minor"
