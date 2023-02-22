@@ -23,3 +23,19 @@ analyzeCommits:
           release: patch
         - type: "feat"
           release: minor
+      presetConfig: true
+generateNotes:
+  - path: "@semantic-release/release-notes-generator"
+    writerOpts:
+      groupBy: "type"
+      commitGroupsSort:
+        - "feat"
+        - "perf"
+        - "fix"
+      commitsSort: "header"
+    types:
+      - type: "feat"
+      - section: "Features"
+      - type: "*"
+      - section: "Bug Fixes"
+    presetConfig: true
