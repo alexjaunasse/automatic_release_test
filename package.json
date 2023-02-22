@@ -1,7 +1,7 @@
 {
   "name": "automatic_release",
   "private": true,
-  "version": "1.6.1",
+  "version": "1.7.0",
   "description": "Test for automatic release with Github Action",
   "main": "index.js",
   "scripts": {
