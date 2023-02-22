@@ -3,19 +3,23 @@ branches:
   - master
 preset: "angular"
 debug: true
-ci: true
-dryRun: false
+ci: false
+dryRun: true
 extends: "semantic-release-npm-github-publish"
 plugins:
   - "@semantic-release/commit-analyzer"
-  - "@semantic-release/release-notes-generator"
-  - "@semantic-release/npm"
-  - "@semantic-release/git"
-  - "@semantic-release/github"
+#  - "@semantic-release/release-notes-generator"
+#  - "@semantic-release/npm"
+#  - "@semantic-release/git"
+#  - "@semantic-release/github"
 analyzeCommits:
     - path: "@semantic-release/commit-analyzer"
       releaseRules:
-        - type: "no-release"
+        - type: "*"
           release: "patch"
+        - message: "*"
+          release: patch
+        - subject: "*"
+          release: patch
         - type: "feat"
-          release: "minor"
+          release: minor
