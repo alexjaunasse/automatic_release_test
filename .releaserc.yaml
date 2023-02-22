@@ -1,6 +1,7 @@
 branches:
   - main
   - master
+preset: "angular"
 debug: true
 ci: true
 dryRun: false
@@ -11,4 +12,9 @@ plugins:
   - "@semantic-release/npm"
   - "@semantic-release/git"
   - "@semantic-release/github"
-
+analyzeCommits:
+    - path: "@semantic-release/commit-analyzer"
+      preset: angular
+      releaseRules:
+        - type: "*"
+          release: "patch"
