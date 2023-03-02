@@ -39,3 +39,7 @@ generateNotes:
       - type: "*"
       - section: "Bug Fixes"
     presetConfig: true
+prepare:
+  path: "@semantic-release/git"
+  assets: ["dist/**/*.{js,css}", "docs", "package.json"],
+  message: "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
