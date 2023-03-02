@@ -39,15 +39,15 @@ generateNotes:
       - type: "*"
       - section: "Bug Fixes"
     presetConfig: true
+
 prepare:
   path: "@semantic-release/git"
-  message: "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+  message: "chore(release): ${nextRelease.version}"
 
 publish:
   - path: "@semantic-release/github"
 
 success:
   - "@semantic-release/github"
-
 fail:
   - "@semantic-release/github"
