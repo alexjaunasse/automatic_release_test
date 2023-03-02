@@ -5,6 +5,7 @@ preset: "angular"
 debug: true
 ci: true
 dryRun: false
+extends: "semantic-release-npm-github-publish"
 plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
@@ -40,8 +41,9 @@ generateNotes:
     presetConfig: true
 
 prepare:
-  path: "@semantic-release/git"
-  message: "chore(release): ${nextRelease.version}"
+  - path:  "@semantic-release/npm"
+  - path: "@semantic-release/git"
+    message: "chore(release): ${nextRelease.version}"
 
 publish:
   - path: "@semantic-release/github"
