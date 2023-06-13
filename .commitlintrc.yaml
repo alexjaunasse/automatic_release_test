@@ -1,4 +1,0 @@
-rules:
-  subject-case: [1, 'always', ['lower-case', 'sentence-case']]
-  header-max-length: [1, 'always', 90]
-  subject-max-length: [1, 'always', 90]
