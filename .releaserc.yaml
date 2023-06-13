@@ -1,7 +1,6 @@
 branches:
   - main
   - master
-preset: "angular"
 debug: true
 ci: true
 dryRun: false
@@ -13,17 +12,17 @@ plugins:
   - "@semantic-release/git"
   - "@semantic-release/github"
 analyzeCommits:
-    - path: "@semantic-release/commit-analyzer"
-      releaseRules:
-        - type: "*"
-          release: "patch"
-        - message: "*"
-          release: patch
-        - subject: "*"
-          release: patch
-        - type: "feat"
-          release: minor
-      presetConfig: true
+  - path: "@semantic-release/commit-analyzer"
+    releaseRules:
+      - type: "*"
+        release: "patch"
+      - message: "*"
+        release: patch
+      - subject: "*"
+        release: patch
+      - type: "feat"
+        release: minor
+    presetConfig: true
 generateNotes:
   - path: "@semantic-release/release-notes-generator"
     writerOpts:
@@ -39,7 +38,6 @@ generateNotes:
       - type: "*"
       - section: "Bug Fixes"
     presetConfig: true
-
 prepare:
   - path:  "@semantic-release/npm"
   - path: "@semantic-release/git"
@@ -52,3 +50,58 @@ success:
   - "@semantic-release/github"
 fail:
   - "@semantic-release/github"
+
+#branches:
+#  - main
+#  - master
+#preset: "angular"
+#debug: true
+#ci: true
+#dryRun: false
+#extends: "semantic-release-npm-github-publish"
+#plugins:
+#  - "@semantic-release/commit-analyzer"
+#  - "@semantic-release/release-notes-generator"
+#  - "@semantic-release/npm"
+#  - "@semantic-release/git"
+#  - "@semantic-release/github"
+#analyzeCommits:
+#    - path: "@semantic-release/commit-analyzer"
+#      releaseRules:
+#        - type: "*"
+#          release: "patch"
+#        - message: "*"
+#          release: patch
+#        - subject: "*"
+#          release: patch
+#        - type: "feat"
+#          release: minor
+#      presetConfig: true
+#generateNotes:
+#  - path: "@semantic-release/release-notes-generator"
+#    writerOpts:
+#      groupBy: "type"
+#      commitGroupsSort:
+#        - "feat"
+#        - "perf"
+#        - "fix"
+#      commitsSort: "header"
+#    types:
+#      - type: "feat"
+#      - section: "Features"
+#      - type: "*"
+#      - section: "Bug Fixes"
+#    presetConfig: true
+#
+#prepare:
+#  - path:  "@semantic-release/npm"
+#  - path: "@semantic-release/git"
+#    message: "chore(release): ${nextRelease.version}"
+#
+#publish:
+#  - path: "@semantic-release/github"
+#
+#success:
+#  - "@semantic-release/github"
+#fail:
+#  - "@semantic-release/github"
